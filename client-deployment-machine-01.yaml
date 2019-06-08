@@ -22,6 +22,5 @@ spec:
             nvidia.com/gpu: 1
         ports:
         - containerPort: 8885
-      nodeSelector :
-        machine: machine-01-16GB
+      nodeName: unilever-cv01
 
