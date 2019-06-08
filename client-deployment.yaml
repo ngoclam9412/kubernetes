@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: yolo
+  template:
+    metadata:
+      labels:
+        component: yolo
+    spec:
+      containers:
+      - name: yolo
+        image: ngoclam9412/unilever:yolo_microservice
+        resources:
+          limits:
+            memory: "6Gi"
+            cpu: "5"
+            nvidia.com/gpu: 1
+        ports:
+        - containerPort: 8885

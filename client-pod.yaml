@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    name: client-pod
+    component: yolo
+spec:
+  containers:
+  - name: client-pod
+    image: ngoclam9412/unilever:yolo_microservice
+    resources:
+      limits:
+        memory: "4Gi"
+        cpu: "500m"
+        nvidia.com/gpu: 1 
+    ports:
+      - containerPort: 8885
+        protocol: TCP
+  restartPolicy: OnFailure
+ 
